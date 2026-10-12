@@ -1,6 +1,5 @@
 /*
  - Name: Lucas Klopp
- - Assignment: Einstein Personal Website (Q3)
  - File: style.css
  - Professor: Ratul Mazumder
  - File Contents:
@@ -11,22 +10,28 @@
     - 5. about
     - 6. publications
     - 7. footer
-    - 8. small screens (iPhone)
+    - 8. medium screens (small windows and tablets)
+    - 9. small screens (iPhone)
 */
 
 /*
 -------------------1. variables--------------------
 */
 
-/* subtle colors and shared sizes used across the page */
+/*
+ - navy and gold on a light gray page, the same colors as my
+   earlier assignments
+ - text-soft is a muted navy gray for small secondary text
+ - shared sizes used across the page
+*/
 :root {
-    --page-ivory: #F6F3EE;
-    --block-white: #FFFFFF;
-    --slate-blue: #5E7387;
-    --pale-blue: #E8EDF1;
-    --line-tan: #DDD6CC;
-    --text-dark: #2F3640;
-    --text-soft: #6B7280;
+    --navy: #12355B;
+    --gold: #D9A21B;
+    --white: #ffffff;
+    --page-gray: #F5F7FA;
+    --line-gray: #D5DBE3;
+    --text-dark: #1F2933;
+    --text-soft: #5A6B7D;
     --main-radius: 5px;
     --main-padding: 30px;
 }
@@ -38,23 +43,24 @@
 /* page background, font and text color */
 body {
     margin: 0;
-    background-color: var(--page-ivory);
+    background-color: var(--page-gray);
     font-family: Georgia, "Times New Roman", serif;
     color: var(--text-dark);
 }
 
 /*
- - wrapper is 90% of the screen and centered, so the layout is the
-   same on a small laptop and a big screen
+ - wrapper is 1200px and centered, so the layout is the same on a
+   small laptop and a big screen
+ - sections 8 and 9 let it shrink on smaller screens
 */
 .wrapper {
-    width: 90%;
+    width: 1200px;
     margin: 0 auto;
 }
 
-/* links use the accent color */
+/* links are navy */
 a {
-    color: var(--slate-blue);
+    color: var(--navy);
 }
 
 /*
@@ -66,21 +72,26 @@ header {
     display: grid;
     grid-template-columns: 1fr auto;
     padding: 24px 0;
-    border-bottom: 1px solid var(--line-tan);
+    border-bottom: 1px solid var(--line-gray);
 }
 
 /* site name, same line-height as the menu so they line up */
 header h1 {
     margin: 0;
     font-size: 30px;
-    font-weight: normal;
+    font-weight: 400;
     line-height: 36px;
 }
 
 /* name links back to the top without looking like a link */
 header h1 a {
-    color: var(--text-dark);
+    color: var(--navy);
     text-decoration: none;
+}
+
+/* menu button is hidden on laptops and big screens */
+.icon {
+    display: none;
 }
 
 /* menu links sit in one row */
@@ -109,24 +120,24 @@ section {
     padding: 40px 0;
 }
 
-/* section heading with a short accent line under it */
+/* section heading with a short gold line under it */
 section h2 {
     margin: 0 0 24px 0;
     padding-bottom: 10px;
-    border-bottom: 3px solid var(--slate-blue);
+    border-bottom: 3px solid var(--gold);
     width: 180px;
     font-size: 22px;
-    font-weight: normal;
+    font-weight: 400;
 }
 
 /*
 -------------------5. about--------------------
 */
 
-/* photo column is 26% wide, text takes the rest */
+/* photo column is 235px wide, text takes the rest */
 .about-row {
     display: grid;
-    grid-template-columns: 26% 1fr;
+    grid-template-columns: 235px 1fr;
     gap: 40px;
 }
 
@@ -135,11 +146,11 @@ section h2 {
     margin: 0;
 }
 
-/* photo fills its column and scales with the screen */
+/* photo is the same width as its column */
 .about-row img {
     display: block;
-    width: 100%;
-    border: 1px solid var(--line-tan);
+    width: 235px;
+    border: 1px solid var(--line-gray);
     border-radius: var(--main-radius);
 }
 
@@ -158,20 +169,12 @@ section h2 {
     line-height: 28px;
 }
 
-/* quote set apart with an accent bar on the left */
-.about-text .quote {
-    margin-top: 24px;
-    padding: 12px 20px;
-    border-left: 4px solid var(--slate-blue);
-    background-color: var(--pale-blue);
-}
-
 /*
 -------------------6. publications--------------------
 */
 
 /*
- - three equal columns on every screen size
+ - three equal columns on laptops and big screens
  - extra papers flow onto a new row automatically
 */
 .papers {
@@ -181,16 +184,16 @@ section h2 {
 }
 
 /*
- - each paper is its own white block with an accent bar on top
+ - each paper is its own white block with a navy bar on top
  - the summary row stretches so every link sits at the bottom
 */
 .paper {
     display: grid;
     grid-template-rows: auto auto auto auto 1fr auto;
     padding: var(--main-padding);
-    background-color: var(--block-white);
-    border: 1px solid var(--line-tan);
-    border-top: 5px solid var(--slate-blue);
+    background-color: var(--white);
+    border: 1px solid var(--line-gray);
+    border-top: 5px solid var(--navy);
     border-radius: var(--main-radius);
 }
 
@@ -205,14 +208,14 @@ section h2 {
     margin: 16px 0 6px 0;
     font-size: 14px;
     font-weight: bold;
-    color: var(--slate-blue);
+    color: var(--navy);
 }
 
 /* paper title */
 .paper h3 {
     margin: 0 0 10px 0;
     font-size: 19px;
-    font-weight: normal;
+    font-weight: 400;
     line-height: 26px;
 }
 
@@ -235,10 +238,20 @@ section h2 {
     font-size: 15px;
 }
 
-/* line under the grid that links to the full list */
+/* centered navy box under the grid that links to the full list */
 .more-papers {
     margin: 24px 0 0 0;
-    font-size: 15px;
+    padding: 18px 20px;
+    background-color: var(--navy);
+    border-radius: var(--main-radius);
+    color: var(--white);
+    font-size: 17px;
+    text-align: center;
+}
+
+/* the link inside the box is white and bold so it stands out */
+.more-papers a {
+    color: var(--white);
 }
 
 /*
@@ -248,7 +261,7 @@ section h2 {
 /* thin line above a centered source credit */
 footer {
     padding: 24px 0;
-    border-top: 1px solid var(--line-tan);
+    border-top: 1px solid var(--line-gray);
     text-align: center;
 }
 
@@ -260,8 +273,40 @@ footer p {
 }
 
 /*
--------------------8. small screens (iPhone)--------------------
+-------------------8. medium screens (small windows and tablets)--------------------
 */
+
+/*
+ - these rules apply when the screen is 1260px wide or less
+ - the wrapper stops being a fixed 1200px and fits the screen, with
+   a 30px margin on each side, so nothing is cut off
+ - the three columns get narrower but the layout stays the same
+*/
+@media (max-width: 1260px) {
+
+    /* wrapper fills the screen instead of staying 1200px */
+    .wrapper {
+        width: auto;
+        margin: 0 30px;
+    }
+}
+
+/*
+-------------------9. small screens (iPhone)--------------------
+*/
+
+/*
+ - at 600px or less three paper columns no longer fit, so the
+   papers go to one per row before anything is cut off
+*/
+@media (max-width: 600px) {
+
+    /* one paper per row instead of three */
+    .papers {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}
 
 /*
  - these rules only apply when the screen is 500px wide or less
@@ -270,16 +315,43 @@ footer p {
 */
 @media (max-width: 500px) {
 
-    /* name on top, menu under it */
+    /* wrapper fits the phone screen with a small margin each side */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+
+    /* less padding around the name and menu button */
     header {
-        grid-template-columns: 1fr;
-        gap: 6px;
         padding: 18px 0;
     }
 
-    /* slightly smaller name so it fits on one line */
+    /* slightly smaller name so it fits beside the menu button */
     header h1 {
         font-size: 26px;
+    }
+
+    /* menu button shows on the right of the name */
+    .icon {
+        display: block;
+        font-size: 26px;
+        line-height: 36px;
+        color: var(--navy);
+        text-decoration: none;
+    }
+
+    /* menu is hidden until the button is tapped */
+    nav {
+        display: none;
+    }
+
+    /*
+     - script.js adds the class "responsive" when the button is tapped
+     - the open menu sits under the name, across the full width
+    */
+    nav.responsive {
+        display: block;
+        grid-column: span 2;
     }
 
     /* menu links stack as a list, one per row */
@@ -288,9 +360,10 @@ footer p {
         gap: 0;
     }
 
-    /* bigger menu text so the links are easy to tap */
+    /* bigger menu text and taller rows so the links are easy to tap */
     nav a {
         font-size: 18px;
+        line-height: 44px;
     }
 
     /* less empty space between sections */
@@ -304,9 +377,9 @@ footer p {
         gap: 20px;
     }
 
-    /* photo is centered and not as wide as the screen */
+    /* photo keeps its size and sits in the middle */
     .about-row figure {
-        width: 70%;
+        width: 235px;
         margin: 0 auto;
     }
 

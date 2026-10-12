@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <!--
  - Name: Lucas Klopp
- - Assignment: Einstein Personal Website (Q3)
  - File: index.html
  - Professor: Ratul Mazumder
  - Page Contents:
-    - header (name + navigation menu)
+    - header (name + navigation menu + menu button for phones)
     - about (photo + short biography)
     - publications (one block per paper)
     - footer (source credit)
@@ -20,13 +19,17 @@
 <body>
     <div class="wrapper" id="top">
 
-        <!-- header: name on the left, menu on the right -->
+        <!--
+         header: name on the left, menu on the right
+         - the menu button only shows on phones and opens the menu
+        -->
         <header>
             <h1><a href="#top">Albert Einstein</a></h1>
-            <nav>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+            <nav id="menu">
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#about" onclick="closeMenu()">About</a></li>
+                    <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
                 </ul>
             </nav>
         </header>
@@ -38,14 +41,14 @@
                 <h2>About Me</h2>
                 <div class="about-row">
                     <figure>
-                        <img src="images/tounge.jpg" alt="Albert Einstein sticking out his tongue">
+                        <img src="images/einstein.jpg" alt="Albert Einstein sticking out his tongue">
                         <figcaption>My favorite picture of myself</figcaption>
                     </figure>
                     <div class="about-text">
-                        <p>I was born in Ulm, Germany, on 14 March 1879, and I am a theoretical physicist best known for developing the theory of relativity. In 1905, often called my miracle year, I published four papers on the photoelectric effect, Brownian motion, special relativity, and the equivalence of mass and energy.</p>
-                        <p>Ten years later I proposed the general theory of relativity, which extended my earlier work to include gravitation. I received the 1921 Nobel Prize in Physics for my services to theoretical physics, especially the law of the photoelectric effect.</p>
-                        <p>Since 1933 I have worked at the Institute for Advanced Study in Princeton, New Jersey. When I am not thinking about physics, I am usually playing my violin, sailing, or out on a long walk.</p>
-                        <p class="quote">"The search and striving for truth and knowledge is one of the highest of man's qualities."</p>
+                        <p>I was born in Ulm, Germany, on 14 March 1879. When I was five and stuck in bed with an illness, my father handed me a compass, and I could not stop wondering what invisible thing kept turning its needle. That question never really left me.</p>
+                        <p>By twelve I was teaching myself algebra and geometry. After finishing my studies in Zurich in 1900, I took a job examining inventions at the Swiss Patent Office in Bern and did my physics in the hours around that work. In 1905 it paid off: within a single year I published four papers, on the photoelectric effect, Brownian motion, special relativity, and the link between mass and energy.</p>
+                        <p>Ten years later I completed the general theory of relativity, which describes gravity as the bending of space and time. The 1921 Nobel Prize in Physics followed, awarded mainly for my explanation of the photoelectric effect.</p>
+                        <p>Since 1933 my home has been the Institute for Advanced Study in Princeton, New Jersey. Away from physics, you will most likely find me with my violin, often playing Mozart, or out on the water in my sailboat.</p>
                     </div>
                 </div>
             </section>
@@ -93,7 +96,7 @@
                         <p class="year">1905</p>
                         <h3>Does the Inertia of a Body Depend Upon Its Energy Content?</h3>
                         <p class="journal">Annalen der Physik</p>
-                        <p class="summary">Shows that mass and energy are equivalent, which gives the famous equation E = mc&#178;.</p>
+                        <p class="summary">Shows that mass and energy are equivalent, which gives the famous equation E = mc².</p>
                         <a href="https://en.wikipedia.org/wiki/Annus_mirabilis_papers">Read more</a>
                     </article>
 
@@ -129,5 +132,8 @@
         </footer>
 
     </div>
+
+    <!-- script for the phone menu button -->
+    <script src="script.js"></script>
 </body>
 </html>
