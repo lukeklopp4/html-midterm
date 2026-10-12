@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+ - Name: Lucas Klopp
+ - Assignment: Einstein Personal Website (Q3)
+ - File: index.html
+ - Professor: Ratul Mazumder
+ - Page Contents:
+    - header (name + navigation menu)
+    - about (photo + short biography)
+    - publications (one block per paper)
+    - footer (source credit)
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Einstein</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper" id="top">
+
+        <!-- header: name on the left, menu on the right -->
+        <header>
+            <h1><a href="#top">Albert Einstein</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <!-- about: photo beside a short biography -->
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about-row">
+                    <figure>
+                        <img src="images/tounge.jpg" alt="Albert Einstein sticking out his tongue">
+                        <figcaption>My favorite picture of myself</figcaption>
+                    </figure>
+                    <div class="about-text">
+                        <p>I was born in Ulm, Germany, on 14 March 1879, and I am a theoretical physicist best known for developing the theory of relativity. In 1905, often called my miracle year, I published four papers on the photoelectric effect, Brownian motion, special relativity, and the equivalence of mass and energy.</p>
+                        <p>Ten years later I proposed the general theory of relativity, which extended my earlier work to include gravitation. I received the 1921 Nobel Prize in Physics for my services to theoretical physics, especially the law of the photoelectric effect.</p>
+                        <p>Since 1933 I have worked at the Institute for Advanced Study in Princeton, New Jersey. When I am not thinking about physics, I am usually playing my violin, sailing, or out on a long walk.</p>
+                        <p class="quote">"The search and striving for truth and knowledge is one of the highest of man's qualities."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--
+             publications: one article block per paper
+             - to add a paper, copy one whole <article> block and paste it
+               after the last one, then change the year, title, journal,
+               summary and link
+             - no CSS changes are needed; a new row is added automatically
+            -->
+            <section id="publications">
+                <h2>Publications</h2>
+                <div class="papers">
+
+                    <article class="paper">
+                        <img src="images/paper.png" alt="Paper icon">
+                        <p class="year">1905</p>
+                        <h3>On a Heuristic Viewpoint Concerning the Production and Transformation of Light</h3>
+                        <p class="journal">Annalen der Physik</p>
+                        <p class="summary">Explains the photoelectric effect by proposing that light is exchanged only in discrete amounts called quanta.</p>
+                        <a href="https://en.wikipedia.org/wiki/Annus_mirabilis_papers">Read more</a>
+                    </article>
+
+                    <article class="paper">
+                        <img src="images/paper.png" alt="Paper icon">
+                        <p class="year">1905</p>
+                        <h3>On the Motion of Small Particles Suspended in a Stationary Liquid, as Required by the Molecular Kinetic Theory of Heat</h3>
+                        <p class="journal">Annalen der Physik</p>
+                        <p class="summary">Explains Brownian motion and gives firm evidence that atoms and molecules exist.</p>
+                        <a href="https://en.wikipedia.org/wiki/Annus_mirabilis_papers">Read more</a>
+                    </article>
+
+                    <article class="paper">
+                        <img src="images/paper.png" alt="Paper icon">
+                        <p class="year">1905</p>
+                        <h3>On the Electrodynamics of Moving Bodies</h3>
+                        <p class="journal">Annalen der Physik</p>
+                        <p class="summary">Introduces the special theory of relativity, reconciling the laws of electricity and magnetism with the laws of mechanics.</p>
+                        <a href="https://en.wikipedia.org/wiki/Annus_mirabilis_papers">Read more</a>
+                    </article>
+
+                    <article class="paper">
+                        <img src="images/paper.png" alt="Paper icon">
+                        <p class="year">1905</p>
+                        <h3>Does the Inertia of a Body Depend Upon Its Energy Content?</h3>
+                        <p class="journal">Annalen der Physik</p>
+                        <p class="summary">Shows that mass and energy are equivalent, which gives the famous equation E = mc&#178;.</p>
+                        <a href="https://en.wikipedia.org/wiki/Annus_mirabilis_papers">Read more</a>
+                    </article>
+
+                    <article class="paper">
+                        <img src="images/paper.png" alt="Paper icon">
+                        <p class="year">1915</p>
+                        <h3>The Field Equations of Gravitation</h3>
+                        <p class="journal">Proceedings of the Prussian Academy of Sciences</p>
+                        <p class="summary">Presents the field equations of general relativity, which describe gravity as the warping of spacetime by mass.</p>
+                        <a href="https://en.wikipedia.org/wiki/Einstein_field_equations">Read more</a>
+                    </article>
+
+                    <article class="paper">
+                        <img src="images/paper.png" alt="Paper icon">
+                        <p class="year">1917</p>
+                        <h3>On the Quantum Theory of Radiation</h3>
+                        <p class="journal">Physikalische Zeitschrift</p>
+                        <p class="summary">Proposes stimulated emission, the physical process that makes the laser possible.</p>
+                        <a href="https://en.wikipedia.org/wiki/Stimulated_emission">Read more</a>
+                    </article>
+
+                </div>
+
+                <!-- link to the full list for readers who want more -->
+                <p class="more-papers">Looking for more? <a href="https://en.wikipedia.org/wiki/List_of_scientific_publications_by_Albert_Einstein">See the full list of my papers and books</a></p>
+            </section>
+
+        </main>
+
+        <!-- footer: where the information came from -->
+        <footer>
+            <p>Source: <a href="https://en.wikipedia.org/wiki/Albert_Einstein">Wikipedia, Albert Einstein</a></p>
+        </footer>
+
+    </div>
+</body>
+</html>

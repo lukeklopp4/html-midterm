@@ -1,0 +1,323 @@
+/*
+ - Name: Lucas Klopp
+ - Assignment: Einstein Personal Website (Q3)
+ - File: style.css
+ - Professor: Ratul Mazumder
+ - File Contents:
+    - 1. variables
+    - 2. page
+    - 3. header
+    - 4. sections
+    - 5. about
+    - 6. publications
+    - 7. footer
+    - 8. small screens (iPhone)
+*/
+
+/*
+-------------------1. variables--------------------
+*/
+
+/* subtle colors and shared sizes used across the page */
+:root {
+    --page-ivory: #F6F3EE;
+    --block-white: #FFFFFF;
+    --slate-blue: #5E7387;
+    --pale-blue: #E8EDF1;
+    --line-tan: #DDD6CC;
+    --text-dark: #2F3640;
+    --text-soft: #6B7280;
+    --main-radius: 5px;
+    --main-padding: 30px;
+}
+
+/*
+-------------------2. page--------------------
+*/
+
+/* page background, font and text color */
+body {
+    margin: 0;
+    background-color: var(--page-ivory);
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--text-dark);
+}
+
+/*
+ - wrapper is 90% of the screen and centered, so the layout is the
+   same on a small laptop and a big screen
+*/
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* links use the accent color */
+a {
+    color: var(--slate-blue);
+}
+
+/*
+-------------------3. header--------------------
+*/
+
+/* name on the left, menu on the right */
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line-tan);
+}
+
+/* site name, same line-height as the menu so they line up */
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 36px;
+}
+
+/* name links back to the top without looking like a link */
+header h1 a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+/* menu links sit in one row */
+nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* menu link text */
+nav a {
+    font-size: 16px;
+    line-height: 36px;
+    text-decoration: none;
+}
+
+/*
+-------------------4. sections--------------------
+*/
+
+/* space above and below every section */
+section {
+    padding: 40px 0;
+}
+
+/* section heading with a short accent line under it */
+section h2 {
+    margin: 0 0 24px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--slate-blue);
+    width: 180px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+/*
+-------------------5. about--------------------
+*/
+
+/* photo column is 26% wide, text takes the rest */
+.about-row {
+    display: grid;
+    grid-template-columns: 26% 1fr;
+    gap: 40px;
+}
+
+/* remove the default figure margin */
+.about-row figure {
+    margin: 0;
+}
+
+/* photo fills its column and scales with the screen */
+.about-row img {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--line-tan);
+    border-radius: var(--main-radius);
+}
+
+/* small caption under the photo */
+.about-row figcaption {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-soft);
+    text-align: center;
+}
+
+/* biography paragraphs */
+.about-text p {
+    margin: 0 0 16px 0;
+    font-size: 17px;
+    line-height: 28px;
+}
+
+/* quote set apart with an accent bar on the left */
+.about-text .quote {
+    margin-top: 24px;
+    padding: 12px 20px;
+    border-left: 4px solid var(--slate-blue);
+    background-color: var(--pale-blue);
+}
+
+/*
+-------------------6. publications--------------------
+*/
+
+/*
+ - three equal columns on every screen size
+ - extra papers flow onto a new row automatically
+*/
+.papers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/*
+ - each paper is its own white block with an accent bar on top
+ - the summary row stretches so every link sits at the bottom
+*/
+.paper {
+    display: grid;
+    grid-template-rows: auto auto auto auto 1fr auto;
+    padding: var(--main-padding);
+    background-color: var(--block-white);
+    border: 1px solid var(--line-tan);
+    border-top: 5px solid var(--slate-blue);
+    border-radius: var(--main-radius);
+}
+
+/* the same paper icon on every block */
+.paper img {
+    width: 44px;
+    height: 55px;
+}
+
+/* year label */
+.paper .year {
+    margin: 16px 0 6px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--slate-blue);
+}
+
+/* paper title */
+.paper h3 {
+    margin: 0 0 10px 0;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 26px;
+}
+
+/* journal name */
+.paper .journal {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: var(--text-soft);
+}
+
+/* one-line summary */
+.paper .summary {
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    line-height: 23px;
+}
+
+/* link at the bottom of the block */
+.paper a {
+    font-size: 15px;
+}
+
+/* line under the grid that links to the full list */
+.more-papers {
+    margin: 24px 0 0 0;
+    font-size: 15px;
+}
+
+/*
+-------------------7. footer--------------------
+*/
+
+/* thin line above a centered source credit */
+footer {
+    padding: 24px 0;
+    border-top: 1px solid var(--line-tan);
+    text-align: center;
+}
+
+/* footer text */
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-soft);
+}
+
+/*
+-------------------8. small screens (iPhone)--------------------
+*/
+
+/*
+ - these rules only apply when the screen is 500px wide or less
+ - everything stacks into one column so the text is big enough to read
+ - laptops and big screens are not changed
+*/
+@media (max-width: 500px) {
+
+    /* name on top, menu under it */
+    header {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 18px 0;
+    }
+
+    /* slightly smaller name so it fits on one line */
+    header h1 {
+        font-size: 26px;
+    }
+
+    /* menu links stack as a list, one per row */
+    nav ul {
+        grid-auto-flow: row;
+        gap: 0;
+    }
+
+    /* bigger menu text so the links are easy to tap */
+    nav a {
+        font-size: 18px;
+    }
+
+    /* less empty space between sections */
+    section {
+        padding: 28px 0;
+    }
+
+    /* photo on top, biography under it */
+    .about-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* photo is centered and not as wide as the screen */
+    .about-row figure {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    /* one paper per row instead of three */
+    .papers {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    /* a little less padding inside each paper block */
+    .paper {
+        padding: 22px;
+    }
+}
